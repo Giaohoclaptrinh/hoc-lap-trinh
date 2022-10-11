@@ -1,0 +1,33 @@
+Xuất và nhập dữ liệu cho biến số
+
+input : nhập, output : xuất
+
+standard input: bàn phím
+
+standard output: màn hình
+
+file text :  người ta có thể điều hướng (<, >) dữ liệu hai chiều từ standard In/Out <-> file Text
+
+tóm lại ( bàn phím, màn hình, tập tin) để thực hiện việc xuất/nhập
+
+Nhập dữ liệu
+
+cin >> tenBien; //nhập cho 1 biến
+cin >> bien1 >> bien2; //nhập cho nhiều biến trên một dòng.
+
+in dữ liệu:
+
+cout << ten biến; //phù hợp cho biến số nguyên, xâu kí tự.
+
+*đối với biến số thực ( float,double)
+
+cout << fixed << setprecision(9); //thiết lập khuôn dạng in, 9: 9 chữ số sau dấu chấm
+cout << tenBien;
+*nếu in nhiều biến trên một dòng thì:
+cout << bien1 << " " << bien2;
+*nếu muốn in và xuống dòng thì :
+cout << tenBien << endl; hoặc cout << tenBien<< '\n';
+*nếu muốn in vào các thông điệp đính kèm thì, ví dụ:
+cout << a << " + " << b << " = " << a + b << endl;
+a= 5, b=7
+5 + 7 = 12
