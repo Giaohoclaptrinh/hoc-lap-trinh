@@ -1,0 +1,21 @@
+// --> ghi chú trong dev cho dễ hiểu hơn
+#include --> dùng thư viên ji nên dùng là bits/stdc++.h
+int là giá trị số nguyên 
+long long cho giá trị nguyên lớn nhất trong c++  -2^31--> 2^31
+float -2^63 --> 2^63
+double 10^18
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int a = 1;
+	long long b = 0;
+	float c = 10;
+	double b = 2a;
+	string str = "abcd";
+	cin >> a
+	cin.ignore()
+	getline(cin,str);
+	freopen("inp.txt","r",stdin);
+	freopen("ont.txt","w",stdout);
+}
