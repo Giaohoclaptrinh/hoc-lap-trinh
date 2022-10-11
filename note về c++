@@ -19,3 +19,4 @@ int main()
 	freopen("inp.txt","r",stdin);
 	freopen("ont.txt","w",stdout);
 }
+x push back(3),
