@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+float thang;
+float n ,m, s ;
+float p ;
+cin >> n >> p >> m;
+s=0 ;
+while ( n<m){
+    s++; 
+    n = n+n*p/100;
+}
+cout << s ;
+}
