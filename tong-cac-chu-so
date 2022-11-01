@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,dv;
+    int S=0;
+    cin >> n ;
+    if (n<0) n = n*(-1);
+    while (n!= 0) {
+        dv = n%10;
+        S=S+dv;
+        n=n/10;
+    }
+    cout << S;
+
+return 0;
+}
