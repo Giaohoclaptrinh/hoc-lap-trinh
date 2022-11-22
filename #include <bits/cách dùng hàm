@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+    long long Fibo(int n){
+        if ((n==0)or(n==1))return 1;
+        else return Fibo(n-1)+ Fibo(n-2);
+    }   
+    long long fact (int n){
+        if (n==0) return 1;
+        else return fact ( n-1)*n;
+    }
+    int main()
+    {
+        int n ; cin >> n;
+        long long k = Fibo(n);
+        cout << k << endl;
+        long long f = fact(n);
+        cout << f;
+        return 0; 
+        }
+    
+
