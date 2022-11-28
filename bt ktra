@@ -1,0 +1,627 @@
+Số Nguyên tố đếm ngược
+
+
+#include <stdio.h>
+#include <math.h>
+int main(){
+	int n,k=0,dem=0;
+	scanf("%d",&n);
+    while(n>0)
+	    {
+	    k=n%10+k*10;
+		n=n/10;
+    }
+    printf("%d",k);
+	for(int i=2;i<=sqrt(k);i++)
+	{ if(k>=2){
+		if(k%i==0){
+			dem=dem+1;
+		}
+		}
+	}
+		if(dem==0&& k>1)
+		   printf(" YES");
+		else
+		   printf(" NO");	
+	return 0;	      
+}
+
+Đếm bộ ba
+
+#include<bits/stdc++.h>
+using namespace std;
+void demboba(int k){
+	long long m, p=0;
+	cin >> k >> m;
+	int x=0;
+	int y=0;
+	int z=0;
+	while(x<=100){
+		for(int y=0;y<=k;y++){
+			for(int z=0; z<=k-y;z++){
+				if((x+y+z<=k) and (x*y*z<=m))
+				p++;
+			}
+		}
+		x++;
+	}
+	cout << p;
+}
+int main(){
+	long long s;
+	demboba(s);
+	return 0;
+}
+
+
+Tính Giá trị hàm sô
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+	{
+	 float x;
+		float fx;
+		scanf("%f",&x);
+		    if(x<(-5))
+		    fx = x;
+			if((-5)<=x && x < 0)
+		    fx =1./x;
+			if(0<=x && x<=4)
+			fx = (x*x)-4;
+			if(x > 4)
+			fx = 6./((x*x)-(2*4*x)+(4*4));
+	 	printf("%.4f",fx);
+   return 0;
+}
+
+
+Mua gỗ
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	int t;cin>>t;
+	while (t--) {
+	
+	int a[8];
+	for (int i=0;i<7;i++) cin>>a[i];
+	sort(a,a+7);
+	if (a[0]+a[1]==a[2]) cout<<a[0]<<" "<<a[1]<<" "<<a[3];
+	else cout<<a[0]<<" "<<a[1]<<" "<<a[2];
+	cout<<endl;
+}
+}
+
+
+Kiểm tra tính tăng dần 
+
+#include<bits/stdc++.h>#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int a[n];
+
+        for (int i=0;i<n;i++)
+            cin >> a[i];
+        
+        
+        for (int i=1;i<n;i++){
+            if(a[i-1]>a[i]) {
+                cout << "No\n";
+                return 0;
+            }
+        }
+        cout << "Yes\n";
+   
+}
+
+
+
+Tổng dãy số trừ max
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n;
+	long long sum=0;
+	long max=-1e9;
+	cin >> n;
+		long long a[n];
+	for (int i=0; i<n;i++){
+		cin >> a[i];
+	}
+	sort(a,a+n);
+	max=a[n-1];
+	for (int i=0;i<n;i++){
+		if(a[i]!=max)
+		sum+=a[i];
+	}
+	cout << sum;
+	return 0;
+}
+
+
+Đếm số amstrong trong dãy 
+
+#include <bits/stdc++.h>
+using namespace std;
+ bool isArm(int n){
+     int len=0;int tmp=n;
+     while (tmp!=0){len++; tmp=tmp/10;}
+     int s=0;
+     tmp=n;
+     while (tmp!=0){s = s + pow(tmp%10, len); tmp=tmp/10;}
+     if (s==n) return true;
+     else return false;
+ }
+ int main()
+ {
+     cout << fixed << setprecision(9);
+     int n; cin >> n;
+     int arr[n+1];
+     for (int i=0; i<n; i++) cin >> arr[i];
+     
+     int c=0;
+     for (int i=0; i<n; i++)
+        if (isArm(arr[i])==true)
+     c++;
+     cout << c;
+     return 0;
+}
+
+
+
+Tỷ lệ tổng và diện tích
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+ bool isArm(int n){
+     int len=0;int tmp=n;
+     while (tmp!=0){len++; tmp=tmp/10;}
+     int s=0;
+     tmp=n;
+     while (tmp!=0){s = s + pow(tmp%10, len); tmp=tmp/10;}
+     if (s==n) return true;
+     else return false;
+ }
+ int main()
+ {
+     cout << fixed << setprecision(9);
+     int n; cin >> n;
+     int arr[n+1];
+     for (int i=0; i<n; i++) cin >> arr[i];
+     
+     int c=0;
+     for (int i=0; i<n; i++)
+        if (isArm(arr[i])==true)
+     c++;
+     cout << c;
+     return 0;
+}
+
+
+Liệt kê số nguyên tố 
+
+
+
+#include<stdio.h>
+#include<math.h>
+int ktsnt(int x){ if(x<=1) return 0;
+for(int j=2; j<=sqrt(x);j++) {
+if(x%j==0) return 0;
+}
+return 1;
+}
+int main(){
+int n;
+do
+{
+scanf("%d",&n);
+} while(n<1);
+for(int i=2; i<=n;i++){
+if(ktsnt(i)){
+printf("%d ",i);
+}
+}
+}
+
+
+
+Ba phần tử lớn nhất 
+
+
+#include <stdio.h>
+
+int main()
+{
+	long long n;
+	scanf("%lld", &n);
+	long long max1=0, max2=0, max3=0;
+	for (long long i=1; i<=n;i++)
+	{
+		long long k;
+		scanf("%lld", &k);
+		if (k>=max1)
+		{
+			max3=max2;
+			max2=max1;
+			max1=k;
+		}
+		else
+		{
+			if ((k<max1) && (k>=max2))
+			{
+				max3=max2;
+				max2=k;
+			}
+			else
+			{
+				if ((k<max1) &&(k<max2) && (k>=max3))
+				{
+					max3=k;
+				}
+			}
+		}
+	}
+	printf("%lld %lld %lld",max1,max2,max3);
+	return 0;
+}
+
+Giai thừa kép
+
+#include<iostream>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    long long factorial_1=1;
+    long long factorial_2=1;
+    for (int i=1; i<=n; i ++){
+        if (i%2==1){
+            factorial_1 *= i;
+            
+        } else if (i%2==0){
+        	factorial_2 *= i;
+		} 
+    }
+    if (n%2==0){
+    	cout << factorial_2;
+	} else {
+		cout << factorial_1;
+	}	 
+    return 0;
+}
+
+
+Hệ phương trình bậc nhất 2 ẩn 
+
+#include<stdio.h>
+int main()
+{
+int t;
+do{
+scanf("%d",&t);
+}while (t<1 || t>10);
+while (t--){
+	float a1,a2,b1,b2,c1,c2;
+	scanf("%f%f%f%f%f%f",&a1,&b1,&c1,&a2,&b2,&c2);
+	float d=(a1*b2)-(a2*b1);
+	float dx=c1*b2-c2*b1;
+	float dy=a1*c2 -a2*c1;
+	if (d==0){
+		if(dx+dy==0)
+		printf("Many solutions");
+		else
+		printf("No solution");
+	}
+	else{
+	double x =dx/d;
+	double y=dy/d;
+	printf("%.6f %.6f",x,y);
+	}
+	printf("\n");
+	}
+	return 0;
+	}	
+	
+	
+Số nguyên tố lớn nhất trong dãy
+
+#include <stdio.h>
+#include <stdlib.h>
+long value[1000000];
+void lietKeSNT()
+{
+    
+    
+
+
+    for(int i = 2; i <= 1000000; i++)
+    {
+        if(value[i] == 0)
+        {
+            for(int j = 2 * i; j <= 1000000; j += i)
+            {
+                value[j] = 1;
+            }
+        }
+
+    }
+}
+
+int main()
+{
+    int n, a;
+    scanf("%d", &n);
+    lietKeSNT();
+    int max = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d", &a);
+        if(value[a] == 0)
+        {
+            if(a > max)
+            {
+                max = a;
+            }
+        }
+    }
+
+    printf("%d", max);
+    return 0;
+}
+
+
+
+ước số của n giai thừa 
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+#define ll long long int
+
+int deg(int n,int sl){
+    int tmp = 0;
+    for(int i = sl;i<=n;i=i*sl){
+        tmp=tmp+n/i;
+    }
+    return tmp+1;
+}
+int ktNT(int n){
+    if(n<2){
+        return 0;
+    }
+    for(int i = 2;i<=sqrt(n);i++){
+        if(n%i==0){
+            return 0;
+        }
+    }
+    return n;
+}
+void slGiaiThua(){
+    int n;
+    scanf("%d",&n);
+    ll tmp = 1;
+    for(int i=1;i<=n;i++){
+        if(ktNT(i)){
+            tmp=tmp*(deg(n,i));
+            tmp=tmp%1000000007;
+        }
+    }
+    printf("%lld",tmp);
+}
+int main(){
+    slGiaiThua();
+}
+
+Phân biệt tam giác 
+
+#include <stdio.h>
+
+
+int main() {
+	float a,b,c;
+	scanf("%f%f%f",&a,&b,&c);
+	if((a==b)&&(a!=c)&&(b!=c)||(a==c)&&(a!=b)&&(c!=b)||(c==b)&&(c!=a)&&(b!=a))
+    	printf("Tam giac can");
+    else
+        if((a==b)&&(a==c)&&(c==b))
+        printf("Tam giac deu");
+    else
+        printf("Tam giac thuong");
+	
+	return 0;
+}
+
+Phân biệt vị trí tọa độ
+
+#include<stdio.h>
+int main()
+{
+	int xi,yi;
+	scanf("%d %d",&xi,&yi);
+	if(xi==0&& yi==0)
+	printf("The coordinate point (%d, %d) lies at the origin.",xi,yi);
+	else if(xi>0 && yi>0)
+	printf("The coordinate point (%d, %d) lies in the I quandrant.",xi,yi);
+	else if(xi<0 && yi>0)
+	printf("The coordinate point (%d, %d) lies in the II quandrant.",xi,yi);
+	else if(xi<0 && yi<0)
+	printf("The coordinate point (%d, %d) lies in the III quandrant.",xi,yi);
+	else if (xi>0 && yi<0)
+	printf("The coordinate point (%d, %d) lies in the IV quandrant.",xi,yi);
+}
+
+
+Tổng các chữ số chẵn
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	while(n--)
+	{
+		long long a,S=0;
+		cin >> a;
+		while(a)
+		{
+			if(a%10%2==0)
+				S+=a%10;
+ 			a/=10;
+		}
+		cout << abs(S) << endl;
+	}
+}
+
+Chênh lệch min max
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	int a[n];
+	for(int i=0; i<n; i++)
+		cin >> a[i];
+	int max=a[0],min=a[0];
+	for(int i=1;i<n;i++)
+	{
+		if(max<a[i])
+			max=a[i];
+		if(min > a[i])
+			min = a[i];
+	}
+	cout << max - min;
+	
+}
+
+
+
+
+trung bình cộng của dãy
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n,dem=0;
+	cin >> n;
+	int a[n];
+	long long s=0;
+	for(int i=0;i<n;i++)
+	{
+		cin >> a[i];
+	}
+	for(int i=0;i<n;i++)
+	{
+		s+=a[i];
+		dem++;
+	}
+	cout << fixed << setprecision(4) << (float) s/dem;
+}
+
+
+
+tổng của tích ba số liên tiếp
+
+
+
+#include <stdio.h>
+
+
+int main() {
+    int x=1000000007;
+    long long n;
+    int s;
+	scanf("%d" ,&n); 
+    long long tmp;
+    if(n%4==1){
+		tmp = (n+3)/4;
+		s = ( ( ( ( (n % x) * ((n+1) % x ) ) % x * ( (n+2) % x) % x ) * ( tmp % x ) % x ) % x) % x  ;
+		printf ("%d", s);
+	}
+	else if(n%4==2){
+		tmp = (n+2)/4;
+		s = ( ( ( ( (n % x) * ((n+1) % x ) ) % x * ( tmp % x) % x ) * ( (n+3) % x ) % x ) % x) % x  ;
+		printf ("%d", s);
+	}
+	else if(n%4==3){
+		tmp = (n+1)/4;
+		s = ( ( ( ( (n % x) * ( tmp % x ) ) % x * ( (n+2) % x) % x ) * ( (n+3) % x ) % x ) % x) % x ;
+		printf ("%d", s);
+	}
+	else{
+		tmp = n/4;
+		s = ( ( ( ( (tmp % x) * ((n+1) % x ) ) % x * ( (n+2) % x) % x ) * ( (n+3) % x ) % x ) % x) % x  ;
+		printf ("%d", s);
+	}
+    return 0;
+}
+
+
+
+Tổng các chữ số là số chính phương 
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	long long n; cin  >> n;
+	long long  sum=0;
+	long long k;
+	while(n!=0){
+	sum+=n%10;
+	n/=10;
+	}
+	k=sqrt(sum); 
+	if(sum==k*k){
+		cout << sum << " " << "YES";
+	}
+	else {
+		cout << sum << " " << "NO";
+	}
+	
+	
+	return 0;
+}
+
+
+Liệt kê số nguyên tố cùng nhau
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int a,n,b[1001];
+int ucln(int a, int b){
+	if(b==0)
+		return a;
+	else return ucln(b,a%b);
+}
+int main(){
+	cin>>a>>n;
+	for(int i = 0; i < n; i++){
+		cin>>b[i];
+	}
+	for(int i = 0; i < n; i++){
+		if(ucln(a,b[i])==1) cout<<b[i]<<" ";
+	}
+}
