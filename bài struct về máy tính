@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Phone {
+    string tenDT, chip, manHinh, hangDT;
+    int gia, namSX, namXuatHien; 
+    double tocDoChip, kichThuocManHinh, soCamera;
+};
+
+void nhap(Phone A[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Ten dt: ";
+        cin >> A[i].tenDT;
+        cout << "Nam San Xuat: ";
+        cin >> A[i].namSX;
+        cout << "HangDt: ";
+        cin >> A[i].hangDT;
+        cout << "Gia: ";
+        cin >> A[i].gia;
+        cout << "Nam Xuat Hien: ";
+        cin >> A[i].namXuatHien;
+        cout << "Chip: ";
+        cin >> A[i].chip;
+        cout << "Man Hinh: ";
+        cin >> A[i].manHinh;
+        cout << "So Camera: ";
+        cin >> A[i].soCamera;
+        cout << "Toc Do Chip: ";
+        cin >> A[i].tocDoChip;
+        cout << "Kich Thuoc Man Hinh: ";
+        cin >> A[i].kichThuocManHinh;
+    }
+}
+
+
+void xuat(Phone A[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << A[i].tenDT << " " << A[i].namSX << " " << A[i].hangDT << " " << A[i].gia <<
+            " " << A[i].namXuatHien << " " << A[i].chip << " " << A[i].manHinh << " " << A[i].soCamera <<
+            " " << A[i].tocDoChip << " " << A[i].kichThuocManHinh << endl;
+    }
+}
+
+void sapXep(Phone gia[], int n) {
+    Phone temp;
+    for (int j = 0; j < n - 1; j++) {
+        for (int k = j + 1; k < n; k++) {
+            if (gia[j].gia > gia[k].gia) {
+                temp = gia[j];
+                gia[j] = gia[k];
+                gia[k] = temp;
+            }
+        }
+    }
+    cout << "Gia dien thoai tang dan la:\n";
+    xuat(gia, n);
+}
+
+int main() {
+    int n;
+    cout << "Nhap so San Pham: ";
+    cin >> n;
+    Phone A[n];
+    nhap(A, n);
+    sapXep(A, n);
+    return 0;
+}
